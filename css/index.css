@@ -1,0 +1,916 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+}
+
+body {
+	overflow:hidden;
+	background-color: #d0dede;
+}
+
+.main {
+	width: 460px;
+	margin: 0 auto;
+}
+
+.header {
+	width: 100%;
+}
+
+.header h1 {
+	width: 100%;
+	height: 30px;
+	display: block;
+	color: #FFC43C;
+	text-align: center;
+	line-height: 30px;
+	margin-top: 10px;
+}
+
+.header p {
+
+	width:100%;
+	line-height:20px;
+	color: #888;
+	margin-top: 10px;
+	border:2px solid #fff;
+	border-radius: 3px;
+	margin:15px 0;
+	padding:5px;
+	font-size:14px;
+}
+
+.header-game-box {
+	width: 100%;
+	height: 50px;
+	margin-bottom:10px;
+}
+
+.header-game-box-left,.header-game-box-right {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+#restart {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px auto;
+	background-color: orange;
+	color: #fff;
+	font-weight: bolder;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#score-board {
+	width: 100px;
+	height: 30px;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	color: #333;
+	margin: 10px auto;
+	font-weight: bolder;
+}
+
+.game-content {
+	width: 420px;
+	height: 420px;
+	background-color: #bbada0;
+	margin: 0 auto;
+	border-radius: 10px;
+	position: relative;
+	padding: 20px;
+}
+
+.game-box {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 20px 0 0 20px;
+	z-index: 10;
+	background-color: #ccc;
+	border-radius: 10px;
+}
+
+.game-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.game-top-box {
+	position: absolute;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+	background-color: #FFC43D;
+	border-radius: 10px;
+}
+
+.game-top-box p {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	font-size: 24px;
+	color: #fff;
+	font-weight: bolder;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+}
+
+.box-merge2 {
+	animation: merge2 0.15s ease-out;
+	-moz-animation: merge2 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge2 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge2 0.15s ease-out;
+}
+
+.box-merge4 {
+	animation: merge4 0.15s ease-out;
+	-moz-animation: merge4 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge4 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge4 0.15s ease-out;
+}
+
+.box-merge8 {
+	animation: merge8 0.15s ease-out;
+	-moz-animation: merge8 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge8 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge8 0.15s ease-out;
+}
+
+.box-merge16 {
+	animation: merge16 0.15s ease-out;
+	-moz-animation: merge16 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge16 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge16 0.15s ease-out;
+}
+
+.box-merge32 {
+	animation: merge32 0.15s ease-out;
+	-moz-animation: merge32 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge32 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge32 0.15s ease-out;
+}
+
+.box-merge64 {
+	animation: merge64 0.15s ease-out;
+	-moz-animation: merge64 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge64 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge64 0.15s ease-out;
+}
+
+.box-merge128 {
+	animation: merge128 0.15s ease-out;
+	-moz-animation: merge128 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge128 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge128 0.15s ease-out;
+}
+
+.box-merge256 {
+	animation: merge256 0.15s ease-out;
+	-moz-animation: merge256 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge256 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge256 0.15s ease-out;
+}
+
+.box-merge512 {
+	animation: merge512 0.15s ease-out;
+	-moz-animation: merge512 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge512 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge512 0.15s ease-out;
+}
+
+.box-merge1024 {
+	animation: merge1024 0.15s ease-out;
+	-moz-animation: merge1024 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge1024 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge1024 0.15s ease-out;
+}
+
+.box-merge2048 {
+	animation: merge2048 0.15s ease-out;
+	-moz-animation: merge2048 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge2048 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge2048 0.15s ease-out;
+}
+
+.box-merge4096 {
+	animation: merge4096 0.15s ease-out;
+	-moz-animation: merge4096 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge4096 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge4096 0.15s ease-out;
+}
+
+.box-merge8192 {
+	animation: merge8192 0.15s ease-out;
+	-moz-animation: merge8192 0.15s ease-out;
+	/* Firefox */
+	-webkit-animation: merge8192 0.15s ease-out;
+	/* Safari 和 Chrome */
+	-o-animation: merge8192 0.15s ease-out;
+}
+			
+			//null-2
+			@keyframes merge2 {
+	0%   {background: #ccc;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FFC43C;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge2 /* Firefox */ {
+	0% {
+		background: #ccc;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FFC43C;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge2 /* Safari 和 Chrome */ {
+	0% {
+		background: #ccc;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FFC43C;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge2 /* Opera */ {
+	0% {
+		background: #ccc;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FFC43C;
+		-o-transform: scale(1);
+	}
+}
+			
+			//2-4
+			@keyframes merge4 {
+	0%   {background: #FFC43C;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF8228;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge4 /* Firefox */ {
+	0% {
+		background: #FFC43C;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF8228;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge4 /* Safari 和 Chrome */ {
+	0% {
+		background: #FFC43C;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF8228;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge4 /* Opera */ {
+	0% {
+		background: #FFC43C;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF8228;
+		-o-transform: scale(1);
+	}
+}
+			
+			//4-8
+			@keyframes merge8 {
+	0%   {background: #FF8228;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF4E3C;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge8 /* Firefox */ {
+	0% {
+		background: #FF8228;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF4E3C;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge8 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF8228;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF4E3C;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge8 /* Opera */ {
+	0% {
+		background: #FF8228;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF4E3C;
+		-o-transform: scale(1);
+	}
+}
+			
+			//8-16
+			@keyframes merge16 {
+	0%   {background: #FF4E3C;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF0808;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge16 /* Firefox */ {
+	0% {
+		background: #FF4E3C;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0808;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge16 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF4E3C;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0808;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge16 /* Opera */ {
+	0% {
+		background: #FF4E3C;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0808;
+		-o-transform: scale(1);
+	}
+}
+			
+			//16-32
+			@keyframes merge32 {
+	0%   {background: #FF0808;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #D5DE51;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge32 /* Firefox */ {
+	0% {
+		background: #FF0808;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #D5DE51;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge32 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF0808;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #D5DE51;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge32 /* Opera */ {
+	0% {
+		background: #FF0808;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #D5DE51;
+		-o-transform: scale(1);
+	}
+}
+			
+			//32-64
+			@keyframes merge64 {
+	0%   {background: #D5DE51;
+	-o-transform: scale(0.1);
+}
+
+100% {
+	background: #DE6B51;
+	-o-transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge64 /* Firefox */ {
+	0% {
+		background: #D5DE51;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #DE6B51;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge64 /* Safari 和 Chrome */ {
+	0% {
+		background: #D5DE51;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #DE6B51;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge64 /* Opera */ {
+	0% {
+		background: #D5DE51;
+		transform: scale(0.1);
+	}
+
+	100% {
+		background: #DE6B51;
+		transform: scale(1);
+	}
+}
+			
+			//64-128
+			@keyframes merge128 {
+	0%   {background: #DE6B51;
+	-o-transform: scale(0.1);
+}
+
+100% {
+	background: #E2AB9E;
+	-o-transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge128 /* Firefox */ {
+	0% {
+		background: #DE6B51;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge128 /* Safari 和 Chrome */ {
+	0% {
+		background: #DE6B51;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge128 /* Opera */ {
+	0% {
+		background: #DE6B51;
+		transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		transform: scale(1);
+	}
+}
+			
+			//64-128
+			@keyframes merge128 {
+	0%   {background: #DE6B51;
+	-o-transform: scale(0.1);
+}
+
+100% {
+	background: #E2AB9E;
+	-o-transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge128 /* Firefox */ {
+	0% {
+		background: #DE6B51;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge128 /* Safari 和 Chrome */ {
+	0% {
+		background: #DE6B51;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge128 /* Opera */ {
+	0% {
+		background: #DE6B51;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #E2AB9E;
+		-o-transform: scale(1);
+	}
+}
+			
+			//128-256
+			@keyframes merge256 {
+	0%   {background: #E2AB9E;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF3C3C;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge256 /* Firefox */ {
+	0% {
+		background: #E2AB9E;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3C3C;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge256 /* Safari 和 Chrome */ {
+	0% {
+		background: #E2AB9E;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3C3C;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge256 /* Opera */ {
+	0% {
+		background: #E2AB9E;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3C3C;
+		-o-transform: scale(1);
+	}
+}
+			
+			//256-512
+			@keyframes merge512 {
+	0%   {background: #FF3C3C;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF3CB1;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge512 /* Firefox */ {
+	0% {
+		background: #FF3C3C;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3CB1;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge512 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF3C3C;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3CB1;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge512 /* Opera */ {
+	0% {
+		background: #FF3C3C;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF3CB1;
+		-o-transform: scale(1);
+	}
+}
+			
+			//512-1024
+			@keyframes merge1024 {
+	0%   {background: #FF3CB1;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #3C42FF;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge1024 /* Firefox */ {
+	0% {
+		background: #FF3CB1;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #3C42FF;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge1024 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF3CB1;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #3C42FF;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge1024 /* Opera */ {
+	0% {
+		background: #FF3CB1;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #3C42FF;
+		-o-transform: scale(1);
+	}
+}
+			
+			//1024-2048
+			@keyframes merge2048 {
+	0%   {background: #3C42FF;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #FF0000;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge2048 /* Firefox */ {
+	0% {
+		background: #3C42FF;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0000;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge2048 /* Safari 和 Chrome */ {
+	0% {
+		background: #3C42FF;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0000;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge2048 /* Opera */ {
+	0% {
+		background: #3C42FF;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #FF0000;
+		-o-transform: scale(1);
+	}
+}
+			
+			//2048-4096
+			@keyframes merge4096 {
+	0%   {background: #FF0000;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #ab3cff;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge4096 /* Firefox */ {
+	0% {
+		background: #FF0000;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #ab3cff;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge4096 /* Safari 和 Chrome */ {
+	0% {
+		background: #FF0000;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #ab3cff;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge4096 /* Opera */ {
+	0% {
+		background: #FF0000;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #ab3cff;
+		-o-transform: scale(1);
+	}
+}
+			
+			//4096-8192
+			@keyframes merge8192 {
+	0%   {background: #ab3cff;
+	transform: scale(0.1);
+}
+
+100% {
+	background: #9a30d0;
+	transform: scale(1);
+}
+			}
+
+@-moz-keyframes merge8192 /* Firefox */ {
+	0% {
+		background: #ab3cff;
+		-moz-transform: scale(0.1);
+	}
+
+	100% {
+		background: #9a30d0;
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes merge8192 /* Safari 和 Chrome */ {
+	0% {
+		background: #ab3cff;
+		-webkit-transform: scale(0.1);
+	}
+
+	100% {
+		background: #9a30d0;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-o-keyframes merge8192 /* Opera */ {
+	0% {
+		background: #ab3cff;
+		-o-transform: scale(0.1);
+	}
+
+	100% {
+		background: #9a30d0;
+		-o-transform: scale(1);
+	}
+}	
